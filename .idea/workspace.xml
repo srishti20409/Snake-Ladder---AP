@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d052ea-544f-48dc-888e-f60d71eb0989" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/SNAKESAsset 19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/SNAKESAsset 21.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
