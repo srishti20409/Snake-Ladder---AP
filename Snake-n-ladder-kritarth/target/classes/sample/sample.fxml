@@ -21,7 +21,7 @@
    <children>
       <ImageView fitHeight="654.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../SNAKESAsset%2021.png" />
+            <Image url="@../SNAKESAsset 21.png" />
          </image>
       </ImageView>
       <ImageView fx:id="diceimage" fitHeight="39.0" fitWidth="43.0" layoutX="440.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
@@ -2183,12 +2183,12 @@
       </Text>
       <ImageView fitHeight="45.0" fitWidth="29.0" layoutX="195.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../SNAKESAsset%2019.png" />
+            <Image url="@../SNAKESAsset 19.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="45.0" fitWidth="29.0" layoutX="359.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../SNAKESAsset%2019.png" />
+            <Image url="@../SNAKESAsset 19.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="15.0" layoutX="367.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
