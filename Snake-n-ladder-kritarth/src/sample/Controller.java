@@ -7,9 +7,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -344,6 +348,33 @@ public class Controller {
     @FXML
     private ImageView diceimage;
 
+    @FXML
+    private Text t6;
+
+    @FXML
+    private Text t7;
+
+    @FXML
+    private Text t3;
+
+    @FXML
+    private TextField t4;
+
+    @FXML
+    private TextField t5;
+
+    @FXML
+    private TextField team;
+
+    @FXML
+    private Text text1;
+
+    @FXML
+    private Text text2;
+
+    @FXML
+    private Rectangle rec;
+
     public void initialize(){
         t1 = new token(but1);
         t2 = new token(but2);
@@ -392,6 +423,9 @@ public class Controller {
     private Button radbut;
 
     @FXML
+    private ImageView bob;
+
+    @FXML
     void clio(ActionEvent event) {
         grid.add(but2,0,9);
     }
@@ -401,93 +435,120 @@ public class Controller {
     void roll(ActionEvent event) {
         Thread thread = new Thread(){
             public void run(){
+                bob.setVisible(false);
                 File file_2 = null;
-                File file6 = new File("@../dice6.png");
-                File file1 = new File("@../dice1.png");
-                File file2 = new File("@../dice2.png");
-                File file3 = new File("@../dice3.png");
-                File file4 = new File("@../dice4.png");
-                File file5 = new File("@../dice5.png");
+                File file6 = new File("src/dice6.png");
+                File file1 = new File("src/dice1.png");
+                File file2 = new File("src/dice2.png");
+                File file3 = new File("src/dice3.png");
+                File file4 = new File("src/dice4.png");
+                File file5 = new File("src/dice5.png");
 
                 try {
-                    if(p1.turn == 1){
-                        rbut.setDisable(true);
-                        lbut.setDisable(false);
+                    if(p1.getTurn() == 1){
+                        rbut.setVisible(true);
+                        lbut.setVisible(false);
                     }
                     else{
-                        lbut.setDisable(true);
-                        rbut.setDisable(false);
+                        lbut.setVisible(true);
+                        rbut.setVisible(false);
                     }
                     for (int i = 0; i < 5; i++) {
-                        file_2 = new File("@../rolling-dice.gif");
+                        file_2 = new File("src/rolling-dice.gif");
                         diceimage.setImage(new Image(file_2.toURI().toString()));
-                        Thread.sleep(1100);
-                        file_2 = new File("@../dice" + (random.nextInt(6)+1)+".png");
+                        Thread.sleep(100);
+                        file_2 = new File("src/dice" + (random.nextInt(6)+1)+".png");
                         diceimage.setImage(new Image(file_2.toURI().toString()));
                         Thread.sleep(50);
                     }
 
 
-                    if(p1.turn == 1){
+                    if(p1.getTurn() == 1){
                         if(file_2.equals(file1)){
-                            p1.mov = 1;
+                            p1.setMov(1);
 
-                            if(p1.t.inside_complete){
-                                p2.turn = 2;
-                                p1.turn = 2;
+                            if(!p1.getT().inside){
+                                p2.setTurn(2);
+                                p1.setTurn(2);
                             }
-                            p1.play(p1.t,p1,p2);
+                            p1.play(p1.getT(),p1,p2);
+                            bob.setVisible(true);
 
                         }
                         else {
                             if (file_2.equals(file2)) {
-                                p1.mov = 2;
+                                p1.setMov(2);
                             } else if (file_2.equals(file3)) {
-                                p1.mov = 3;
+                                p1.setMov(3);
                             } else if (file_2.equals(file4)) {
-                                p1.mov = 4;
+                                p1.setMov(4);
                             } else if (file_2.equals(file5)) {
-                                p1.mov = 5;
+                                p1.setMov(5);
                             } else if (file_2.equals(file6)) {
-                                p1.mov = 6;
+                                p1.setMov(6);
                             }
-                            p1.play(p1.t,p1,p2);
-                            p1.turn =2;
-                            p2.turn = 2;
+                            p1.play(p1.getT(),p1,p2);
+                            bob.setVisible(true);
+                            p1.setTurn(2);
+                            p2.setTurn(2);
                         }
                         if(p1.win){
-                            Textf.setText("Player 1 won");
+                            team.setVisible(true);
+                            t3.setVisible(true);
+                            t4.setVisible(true);
+                            t5.setVisible(true);
+                            t6.setVisible(true);
+                            t7.setVisible(true);
+                            text1.setVisible(true);
+                            text2.setVisible(true);
+                            text1.setText("PLAYER1");
+                            text2.setText("PLAYER2");
+                            dice.setDisable(true);
+                            rec.setVisible(true);
                         }
                     }
-                    else if(p1.turn == 2){
+                    else if(p1.getTurn() == 2){
                         if(file_2.equals(file1)){
-                            p2.mov = 1;
+                            p2.setMov(1);
 
-                            if(p2.t.inside_complete){
-                                p2.turn = 1;
-                                p1.turn = 1;
+                            if(!p2.getT().inside){
+                                p2.setTurn(1);
+                                p1.setTurn(1);
                             }
-                            p2.play(p2.t,p1,p2);
+                            p2.play(p2.getT(),p1,p2);
+                            bob.setVisible(true);
 
                         }
                         else {
                             if (file_2.equals(file2)) {
-                                p2.mov = 2;
+                                p2.setMov(2);
                             } else if (file_2.equals(file3)) {
-                                p2.mov = 3;
+                                p2.setMov(3);
                             } else if (file_2.equals(file4)) {
-                                p2.mov = 4;
+                                p2.setMov(4);
                             } else if (file_2.equals(file5)) {
-                                p2.mov = 5;
+                                p2.setMov(5);
                             } else if (file_2.equals(file6)) {
-                                p2.mov = 6;
+                                p2.setMov(6);
                             }
-                            p2.play(p2.t,p1,p2);
-                            p1.turn =1;
-                            p2.turn = 1;
+                            p2.play(p2.getT(),p1,p2);
+                            bob.setVisible(true);
+                            p1.setTurn(1);
+                            p2.setTurn(1);
                         }
                         if(p2.win){
-                            Textf.setText("player2 won");
+                            team.setVisible(true);
+                            t3.setVisible(true);
+                            t4.setVisible(true);
+                            t5.setVisible(true);
+                            t6.setVisible(true);
+                            t7.setVisible(true);
+                            text1.setVisible(true);
+                            text2.setVisible(true);
+                            text1.setText("PLAYER2");
+                            text2.setText("PLAYER1");
+                            dice.setDisable(true);
+                            rec.setVisible(true);
                         }
                     }
 
@@ -505,31 +566,54 @@ public class Controller {
 
 }
 class token{
-    public Button bt;
-    public int posx;
-    public int posy;
+    private Button bt;
+    private int posx;
+    private int posy;
     public boolean inside = true;
     public boolean inside_complete = false;
     token(Button b){
         bt = b;
+    }
 
+    public Button getBt() {
+        return bt;
+    }
+
+    public int getPosx() {
+        return posx;
+    }
+
+    public int getPosy() {
+        return posy;
+    }
+
+    public void setBt(Button bt) {
+        this.bt = bt;
+    }
+
+    public void setPosx(int posx) {
+        this.posx = posx;
+    }
+
+    public void setPosy(int posy) {
+        this.posy = posy;
     }
 
 }
 
 class Player extends Thread{
-    token t;
-    public int mov;
-    public int turn =1;
-    public int[][] pos_arr;
-    public GridPane grid;
-    public int[][] upgrade;
-    public int[][] reach1;
-    public int[][] fall;
-    public int[][] reach2;
+    private token t;
+    private int mov;
+    private int turn =1;
+    private int[][] pos_arr;
+    private GridPane grid;
+    private int[][] upgrade;
+    private int[][] reach1;
+    private int[][] fall;
+    private int[][] reach2;
     public boolean win = false;
-    public int[] present;
-    public GridPane[] smallgrid;
+    private int[] present;
+    private GridPane[] smallgrid;
     Player(token t, int[][] pr, GridPane grid, int[][] a, int[][] b, int[][] c, int[][] d, int[] present, GridPane[] sgrid){
         this.t = t;
         pos_arr = pr;
@@ -568,19 +652,19 @@ class Player extends Thread{
 
                     @Override
                     public void run() {
-                        grid.add(t.bt, pos_arr[0][0], pos_arr[0][1]);
+                        grid.add(t.getBt(), pos_arr[0][0], pos_arr[0][1]);
                     }
                 });
                 present[0] += 1;
                 t.inside= false;
-                t.posx = pos_arr[0][0];
-                t.posy = pos_arr[0][1];
+                t.setPosx(pos_arr[0][0]);
+                t.setPosy(pos_arr[0][1]);
             }
 
         }
         else{
             t.inside_complete = true;
-            int[] temp = new int[]{t.posx, t.posy};
+            int[] temp = new int[]{t.getPosx(), t.getPosy()};
             int ind = linearCheck(pos_arr, temp) -1;
 
             if(present[ind] == 2){
@@ -589,13 +673,13 @@ class Player extends Thread{
 
                     @Override
                     public void run() {
-                        grid.add(t.bt,temp_2[0], temp_2[1]);
+                        grid.add(t.getBt(),temp_2[0], temp_2[1]);
                         if(p1.turn == 1){
                             Platform.runLater(new Runnable(){
 
                                 @Override
                                 public void run() {
-                                    grid.add(p2.t.bt,pos_arr[ind][0],pos_arr[ind][1]);
+                                    grid.add(p2.t.getBt(),pos_arr[ind][0],pos_arr[ind][1]);
                                 }
                             });
 
@@ -605,7 +689,7 @@ class Player extends Thread{
 
                                 @Override
                                 public void run() {
-                                    grid.add(p1.t.bt,pos_arr[ind][0],pos_arr[ind][1]);
+                                    grid.add(p1.t.getBt(),pos_arr[ind][0],pos_arr[ind][1]);
                                 }
                             });
 
@@ -620,25 +704,25 @@ class Player extends Thread{
             if(ind+mov+1 <= 100){
 
                 for (int i = ind+1; i <ind+mov+1 ; i++) {
-                    GridPane.setConstraints(t.bt, pos_arr[i][0], pos_arr[i][1]);
+                    GridPane.setConstraints(t.getBt(), pos_arr[i][0], pos_arr[i][1]);
                     Thread.sleep(400);
-                    t.posx = pos_arr[i][0];
-                    t.posy = pos_arr[i][1];
+                    t.setPosx(pos_arr[i][0]);
+                    t.setPosy(pos_arr[i][1]);
                 }
                 int[] temp1 = pos_arr[ind+mov];
                 int ind1 = linearCheck(upgrade, temp1)-1;
                 if(ind1 != -2){
-                    GridPane.setConstraints(t.bt, reach1[ind1][0], reach1[ind1][1]);
-                    t.posx= reach1[ind1][0];
-                    t.posy = reach1[ind1][1];
+                    GridPane.setConstraints(t.getBt(), reach1[ind1][0], reach1[ind1][1]);
+                    t.setPosx(reach1[ind1][0]);
+                    t.setPosy(reach1[ind1][1]);
                 }
                 int ind2 = linearCheck(fall, temp1)-1;
                 if(ind2 != -2){
-                    GridPane.setConstraints(t.bt, reach2[ind2][0], reach2[ind2][1]);
-                    t.posx= reach2[ind2][0];
-                    t.posy = reach2[ind2][1];
+                    GridPane.setConstraints(t.getBt(), reach2[ind2][0], reach2[ind2][1]);
+                    t.setPosx(reach2[ind2][0]);
+                    t.setPosy(reach2[ind2][1]);
                 }
-                int[] temp2 = new int[]{t.posx, t.posy};
+                int[] temp2 = new int[]{t.getPosx(), t.getPosy()};
                 int ind_tem = linearCheck(pos_arr, temp2)-1;
 
                 present[ind_tem] += 1;
@@ -647,8 +731,8 @@ class Player extends Thread{
 
                         @Override
                         public void run() {
-                            smallgrid[ind_tem].add(p1.t.bt,0, 0);
-                            smallgrid[ind_tem].add(p2.t.bt, 0, 1);
+                            smallgrid[ind_tem].add(p1.t.getBt(),0, 0);
+                            smallgrid[ind_tem].add(p2.t.getBt(), 0, 1);
                         }
                     });
 
@@ -660,4 +744,97 @@ class Player extends Thread{
 
         }
     }
+
+    public GridPane getGrid() {
+        return grid;
+    }
+
+    public GridPane[] getSmallgrid() {
+        return smallgrid;
+    }
+
+    public int getMov() {
+        return mov;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public int[] getPresent() {
+        return present;
+    }
+
+    public int[][] getFall() {
+        return fall;
+    }
+
+    public int[][] getPos_arr() {
+        return pos_arr;
+    }
+
+    public int[][] getReach1() {
+        return reach1;
+    }
+
+    public int[][] getReach2() {
+        return reach2;
+    }
+
+    public int[][] getUpgrade() {
+        return upgrade;
+    }
+
+    public token getT() {
+        return t;
+    }
+
+    public void setFall(int[][] fall) {
+        this.fall = fall;
+    }
+
+    public void setGrid(GridPane grid) {
+        this.grid = grid;
+    }
+
+    public void setMov(int mov) {
+        this.mov = mov;
+    }
+
+    public void setPos_arr(int[][] pos_arr) {
+        this.pos_arr = pos_arr;
+    }
+
+    public void setPresent(int[] present) {
+        this.present = present;
+    }
+
+    public void setReach1(int[][] reach1) {
+        this.reach1 = reach1;
+    }
+
+    public void setReach2(int[][] reach2) {
+        this.reach2 = reach2;
+    }
+
+    public void setSmallgrid(GridPane[] smallgrid) {
+        this.smallgrid = smallgrid;
+    }
+
+    public void setT(token t) {
+        this.t = t;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public void setUpgrade(int[][] upgrade) {
+        this.upgrade = upgrade;
+    }
+
+    public void setWin(boolean win) {
+        this.win = win;
+    }
+
 }
