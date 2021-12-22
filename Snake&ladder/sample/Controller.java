@@ -113,15 +113,15 @@ public class Controller {
                         }
                         else {
                             if (file_2.equals(file2)) {
-                                    p1.mov = 2;
+                                p1.mov = 2;
                             } else if (file_2.equals(file3)) {
-                                    p1.mov = 3;
+                                p1.mov = 3;
                             } else if (file_2.equals(file4)) {
-                                    p1.mov = 4;
+                                p1.mov = 4;
                             } else if (file_2.equals(file5)) {
-                                    p1.mov = 5;
+                                p1.mov = 5;
                             } else if (file_2.equals(file6)) {
-                                    p1.mov = 6;
+                                p1.mov = 6;
                             }
                             p1.play(p1.t);
                             p1.turn =2;
@@ -262,6 +262,9 @@ class Player{
                     GridPane.setConstraints(t.bt, reach2[ind2][0], reach2[ind2][1]);
                     t.posx= reach2[ind2][0];
                     t.posy = reach2[ind2][1];
+                }
+                if(ind+mov-1 == 99){
+
                 }
             }
 
