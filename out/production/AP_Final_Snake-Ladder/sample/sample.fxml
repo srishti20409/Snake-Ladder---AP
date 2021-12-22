@@ -19,7 +19,7 @@
             <Image url="@../dice6.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="dice" layoutX="256.0" layoutY="500.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
+      <Button fx:id="dice" layoutX="256.0" layoutY="494.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
       <ImageView fitHeight="614.0" fitWidth="330.0" layoutX="571.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image.jpg" />
@@ -247,29 +247,29 @@
       </ImageView>
       <ImageView fitHeight="76.0" fitWidth="52.0" layoutX="275.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../SNAKESAsset%2017.png" />
+            <Image url="@../SNAKESAsset 17.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="76.0" fitWidth="57.0" layoutX="172.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../SNAKESAsset%2017.png" />
+            <Image url="@../SNAKESAsset 17.png" />
          </image>
       </ImageView>
       <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76ZM528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" layoutX="-281.0" layoutY="-254.0" opacity="0.32" scaleX="0.45" scaleY="0.45" />
       <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" fill="#9ef8ff" layoutX="-283.0" layoutY="-256.0" scaleX="0.45" scaleY="0.45" stroke="BLACK" />
       <ImageView fitHeight="158.0" fitWidth="30.0" layoutX="325.0" layoutY="116.0" pickOnBounds="true">
          <image>
-            <Image url="@../SNAKESAsset%2016.png" />
+            <Image url="@../SNAKESAsset 16.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="389.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../SNAKESAsset%2015.png" />
+            <Image url="@../SNAKESAsset 15.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="158.0" fitWidth="52.0" layoutX="220.0" layoutY="272.0" pickOnBounds="true">
          <image>
-            <Image url="@../SNAKESAsset%2018.png" />
+            <Image url="@../SNAKESAsset 18.png" />
          </image>
       </ImageView>
    </children>

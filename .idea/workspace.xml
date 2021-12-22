@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1d052ea-544f-48dc-888e-f60d71eb0989" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Snake&amp;ladder/SNAKESAsset 15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake&amp;ladder/SNAKESAsset 16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake&amp;ladder/SNAKESAsset 17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake&amp;ladder/SNAKESAsset 18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake&amp;ladder/snake2-flipped.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake&amp;ladder/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Snake&amp;ladder/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake&amp;ladder/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake&amp;ladder/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AP_Final_Snake-Ladder/sample/token.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
