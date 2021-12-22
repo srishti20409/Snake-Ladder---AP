@@ -359,7 +359,7 @@ public class Controller {
                 {9,0},{8,0},{7,0},{6,0},{5,0},{4,0},{3,0},{2,0},{1,0},{0,0},
         };
         GridPane[] g = {grid1,grid2,grid3,grid4,grid5,grid6,grid7,grid8,grid9,grid10,
-                grid11,grid12,grid13,grid14,grid15,grid16,grid17, grid18,grid19,grid20,
+                        grid11,grid12,grid13,grid14,grid15,grid16,grid17, grid18,grid19,grid20,
                 grid21,grid22,grid23,grid24,grid25,grid26,grid27, grid28,grid29,grid30,
                 grid31,grid32,grid33,grid34,grid35,grid36,grid37, grid38,grid39,grid40,
                 grid41,grid42,grid43,grid44,grid45,grid46,grid47, grid48,grid49,grid50,
@@ -370,7 +370,7 @@ public class Controller {
                 grid91,grid92,grid93,grid94,grid95,grid96,grid97, grid98,grid99,grid90,};
 
         int[][] upgrade = {{3,9}, {7,9},{0,7},{7,7},{8,6},{1,5},{2,4},{8,4},{8,3},{3,1}};
-        int[][] reach = {{5,7},{9,6},{0,4},{5,5},{7,5},{0,2},{3,2},{7,3},{7,0},{2,0}};
+        int[][] reach = {{4,7},{9,6},{0,4},{5,5},{7,5},{0,2},{3,2},{7,3},{7,0},{2,0}};
         int[][] demot = {{9,8},{4,6},{4,4},{2,5},{9,1},{6,0},{5,2},{0,1},{4,0},{1,0}};
         int[][] fall = {{8,9},{6,8},{2,8},{1,7},{9,5},{7,4},{6,4},{2,3},{4,3},{2,2}};
 
@@ -402,13 +402,12 @@ public class Controller {
         Thread thread = new Thread(){
             public void run(){
                 File file_2 = null;
-                File file6 = new File("@../dice1.png");
-                File file1 = new File("@../dice1.jpg");
-                File file2 = new File("@../dice2.jpg");
-                File file3 = new File("@../dice3.jpg");
-                File file4 = new File("@../dice4.jpg");
-                File file5 = new File("@../dice5.jpg");
-                System.out.println("Thread Running");
+                File file6 = new File("src/dice6.jpg");
+                File file1 = new File("src/dice1.jpg");
+                File file2 = new File("src/dice2.jpg");
+                File file3 = new File("src/dice3.jpg");
+                File file4 = new File("src/dice4.jpg");
+                File file5 = new File("src/dice5.jpg");
 
                 try {
                     if(p1.turn == 1){
@@ -425,14 +424,16 @@ public class Controller {
                         Thread.sleep(50);
                     }
 
-                    System.out.println(file_2);
-                    System.out.println(file6);
-                    System.out.println(p1.turn);
+
                     if(p1.turn == 1){
                         if(file_2.equals(file1)){
-                            System.out.println("its one");
                             p1.mov = 1;
-                            p1.play(p1.t);
+
+                            if(p1.t.inside_complete){
+                                p2.turn = 2;
+                                p1.turn = 2;
+                            }
+                            p1.play(p1.t,p1,p2);
 
                         }
                         else {
@@ -447,7 +448,7 @@ public class Controller {
                             } else if (file_2.equals(file6)) {
                                 p1.mov = 6;
                             }
-                            p1.play(p1.t);
+                            p1.play(p1.t,p1,p2);
                             p1.turn =2;
                             p2.turn = 2;
                         }
@@ -457,9 +458,13 @@ public class Controller {
                     }
                     else if(p1.turn == 2){
                         if(file_2.equals(file1)){
-                            System.out.println("its one");
                             p2.mov = 1;
-                            p2.play(p2.t);
+
+                            if(p2.t.inside_complete){
+                                p2.turn = 1;
+                                p1.turn = 1;
+                            }
+                            p2.play(p2.t,p1,p2);
 
                         }
                         else {
@@ -474,7 +479,7 @@ public class Controller {
                             } else if (file_2.equals(file6)) {
                                 p2.mov = 6;
                             }
-                            p2.play(p2.t);
+                            p2.play(p2.t,p1,p2);
                             p1.turn =1;
                             p2.turn = 1;
                         }
@@ -501,6 +506,7 @@ class token{
     public int posx;
     public int posy;
     public boolean inside = true;
+    public boolean inside_complete = false;
     token(Button b){
         bt = b;
 
@@ -552,11 +558,9 @@ class Player extends Thread{
         }
         return -1;
     }
-    public void play(token t) throws InterruptedException {
+    public void play(token t, Player p1, Player p2) throws InterruptedException {
         if(t.inside){
             if(mov == 1){
-                System.out.println("hello");
-                System.out.println(Arrays.toString(pos_arr[0]));
                 Platform.runLater(new Runnable(){
 
                     @Override
@@ -572,13 +576,47 @@ class Player extends Thread{
 
         }
         else{
+            t.inside_complete = true;
             int[] temp = new int[]{t.posx, t.posy};
             int ind = linearCheck(pos_arr, temp) -1;
+
+            if(present[ind] == 2){
+                int[] temp_2 =pos_arr[ind+1];
+                Platform.runLater(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        grid.add(t.bt,temp_2[0], temp_2[1]);
+                        if(p1.turn == 1){
+                            Platform.runLater(new Runnable(){
+
+                                @Override
+                                public void run() {
+                                    grid.add(p2.t.bt,pos_arr[ind][0],pos_arr[ind][1]);
+                                }
+                            });
+
+                        }
+                        else{
+                            Platform.runLater(new Runnable(){
+
+                                @Override
+                                public void run() {
+                                    grid.add(p1.t.bt,pos_arr[ind][0],pos_arr[ind][1]);
+                                }
+                            });
+
+                        }
+
+                    }
+                });
+
+
+            }
             present[ind]  -= 1;
             if(ind+mov+1 <= 100){
 
                 for (int i = ind+1; i <ind+mov+1 ; i++) {
-                    System.out.println("run");
                     GridPane.setConstraints(t.bt, pos_arr[i][0], pos_arr[i][1]);
                     Thread.sleep(400);
                     t.posx = pos_arr[i][0];
@@ -586,25 +624,32 @@ class Player extends Thread{
                 }
                 int[] temp1 = pos_arr[ind+mov];
                 int ind1 = linearCheck(upgrade, temp1)-1;
-                System.out.println(ind1);
                 if(ind1 != -2){
                     GridPane.setConstraints(t.bt, reach1[ind1][0], reach1[ind1][1]);
                     t.posx= reach1[ind1][0];
                     t.posy = reach1[ind1][1];
                 }
                 int ind2 = linearCheck(fall, temp1)-1;
-                System.out.println(ind2);
                 if(ind2 != -2){
                     GridPane.setConstraints(t.bt, reach2[ind2][0], reach2[ind2][1]);
                     t.posx= reach2[ind2][0];
                     t.posy = reach2[ind2][1];
                 }
                 int[] temp2 = new int[]{t.posx, t.posy};
-                int ind_tem = linearCheck(pos_arr, temp2);
+                int ind_tem = linearCheck(pos_arr, temp2)-1;
+
                 present[ind_tem] += 1;
-//                if(present[ind_tem] == 2){
-//                    smallgrid[ind_tem].add
-//                }
+                if(present[ind_tem] == 2){
+                    Platform.runLater(new Runnable(){
+
+                        @Override
+                        public void run() {
+                            smallgrid[ind_tem].add(p1.t.bt,0, 0);
+                            smallgrid[ind_tem].add(p2.t.bt, 0, 1);
+                        }
+                    });
+
+                }
                 if(ind+mov == 99){
                     win = true;
                 }
@@ -614,3 +659,4 @@ class Player extends Thread{
     }
 
 }
+
