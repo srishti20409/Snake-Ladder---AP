@@ -19,13 +19,13 @@
             <Image url="@../dice6.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="dice" layoutX="258.0" layoutY="495.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
+      <Button fx:id="dice" layoutX="256.0" layoutY="500.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
       <ImageView fitHeight="614.0" fitWidth="330.0" layoutX="571.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image.jpg" />
          </image>
       </ImageView>
-      <GridPane gridLinesVisible="true" layoutX="167.0" layoutY="98.0" prefHeight="387.0" prefWidth="241.0">
+      <GridPane fx:id="grid" gridLinesVisible="true" layoutX="167.0" layoutY="98.0" prefHeight="387.0" prefWidth="241.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="23.600051879882812" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="23.600051879882812" />
@@ -212,5 +212,7 @@
       <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" fill="#9ef8ff" layoutX="-283.0" layoutY="-256.0" scaleX="0.45" scaleY="0.45" stroke="BLACK" />
       <SVGPath content="M686,426h6.52v-7H706.6v7h5.6V180h-5.6v7.83H692.53v-8.17H686v70h0v85h0v84h0Zm6.52-83.16V334H706.6v8.84Zm14.07,5.83v8.06H692.53v-8.06Zm-14.07-90.83v-7.73H706.6v7.73ZM706.6,264v7.73H692.53V264Zm-14.07-70.33H706.6v8.06H692.53Zm0,13.89H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,235v9.26H692.53V235Zm-14.07,42.54H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,305v9.26H692.53V305Zm-14.07,15.09H706.6v8.06H692.53Zm0,42.45H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,390v9.26H692.53V390Zm-14.07,15.09H706.6v8.06H692.53Z" layoutX="-521.0" layoutY="34.0" opacity="0.5" scaleX="0.45" scaleY="0.45" />
       <SVGPath content="M686,426h6.52v-7H706.6v7h5.6V180h-5.6v7.83H692.53v-8.17H686v70h0v85h0v84h0Zm6.52-83.16V334H706.6v8.84Zm14.07,5.83v8.06H692.53v-8.06Zm-14.07-90.83v-7.73H706.6v7.73ZM706.6,264v7.73H692.53V264Zm-14.07-70.33H706.6v8.06H692.53Zm0,13.89H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,235v9.26H692.53V235Zm-14.07,42.54H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,305v9.26H692.53V305Zm-14.07,15.09H706.6v8.06H692.53Zm0,42.45H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,390v9.26H692.53V390Zm-14.07,15.09H706.6v8.06H692.53Z" fill="#9ef8ff" layoutX="-519.0" layoutY="33.0" scaleX="0.45" scaleY="0.45" stroke="BLACK" />
+      <Button fx:id="rbut" layoutX="363.0" layoutY="545.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: #4de47a;" textFill="#4de47a" />
+      <Button fx:id="lbut" layoutX="199.0" layoutY="545.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: #4faae7;" textFill="#4faae7" />
    </children>
 </Pane>
