@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a1d052ea-544f-48dc-888e-f60d71eb0989" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/blue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/sample.fxml" afterDir="false" />
     </list>
