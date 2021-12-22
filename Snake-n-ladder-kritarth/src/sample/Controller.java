@@ -1,2140 +1,660 @@
-<?xml version="1.0" encoding="UTF-8"?>
+package sample;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.shape.SVGPath?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+import javax.swing.*;
+import java.io.File;
+import java.util.Arrays;
+import java.util.Random;
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <ImageView fx:id="diceimage" fitHeight="69.0" fitWidth="69.0" layoutX="253.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../dice6.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="dice" layoutX="256.0" layoutY="495.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
-      <ImageView fitHeight="614.0" fitWidth="330.0" layoutX="571.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image.jpg" />
-         </image>
-      </ImageView>
-      <GridPane fx:id="grid" gridLinesVisible="true" layoutX="167.0" layoutY="98.0" prefHeight="387.0" prefWidth="241.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="23.600051879882812" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="23.600051879882812" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="23.600051879882812" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="38.399993896484375" minHeight="0.0" prefHeight="38.399993896484375" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="9.600006103515625" prefHeight="9.600006103515625" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="38.399993896484375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d6959d" height="38.0" smooth="false" stroke="#e7a0ab" width="23.0" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.rowIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.rowIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.rowIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="6" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="4" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="2" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5e2e4" height="38.0" smooth="false" stroke="#f7e2e5" width="23.0" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <SVGPath content="M796.78,812.25H813l20,30.44-20,30.72H796.78l19.3-30.58Z" fill="#e3b1b4" rotate="180.0" scaleX="0.5" scaleY="0.5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <GridPane fx:id="grid1" GridPane.columnIndex="0" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid2" GridPane.columnIndex="1" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 " textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid3" GridPane.columnIndex="2" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid4" GridPane.columnIndex="3" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid5" GridPane.columnIndex="4" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid6" GridPane.columnIndex="5" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid7" GridPane.columnIndex="6" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid8" GridPane.columnIndex="7" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid9" GridPane.columnIndex="8" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid10" GridPane.columnIndex="9" GridPane.rowIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid11" GridPane.columnIndex="9" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid12" GridPane.columnIndex="8" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid13" GridPane.columnIndex="7" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid14" GridPane.columnIndex="6" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid15" GridPane.columnIndex="5" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid16" GridPane.columnIndex="4" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid17" GridPane.columnIndex="3" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="17" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid18" GridPane.columnIndex="2" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="18" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid19" GridPane.columnIndex="1" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="19" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid20" GridPane.columnIndex="0" GridPane.rowIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid21" GridPane.columnIndex="0" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="21" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid22" GridPane.columnIndex="1" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="22" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid23" GridPane.columnIndex="2" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="23" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid24" GridPane.columnIndex="3" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid25" GridPane.columnIndex="4" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="25" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid26" GridPane.columnIndex="5" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="26" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid27" GridPane.columnIndex="6" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="27" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid28" GridPane.columnIndex="7" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid29" GridPane.columnIndex="8" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="29" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid30" GridPane.columnIndex="9" GridPane.rowIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="30" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid31" GridPane.columnIndex="9" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="31" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid32" GridPane.columnIndex="8" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="32" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid33" GridPane.columnIndex="7" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="33" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid34" GridPane.columnIndex="6" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="34" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid35" GridPane.columnIndex="5" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="35" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid36" GridPane.columnIndex="4" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="36" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid37" GridPane.columnIndex="3" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="37" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid38" GridPane.columnIndex="2" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="38" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid39" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="39" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid40" GridPane.columnIndex="0" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="40" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid41" GridPane.columnIndex="0" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="41" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid42" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="42" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid43" GridPane.columnIndex="2" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="43" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid44" GridPane.columnIndex="3" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="44" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid45" GridPane.columnIndex="4" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="45" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid46" GridPane.columnIndex="5" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="46" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid47" GridPane.columnIndex="6" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="47" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid48" GridPane.columnIndex="7" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="48" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid49" GridPane.columnIndex="8" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="49" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid50" GridPane.columnIndex="9" GridPane.rowIndex="5">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="50" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid51" GridPane.columnIndex="9" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="51" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid52" GridPane.columnIndex="8" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="52" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid53" GridPane.columnIndex="7" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="53" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid54" GridPane.columnIndex="6" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="54" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid55" GridPane.columnIndex="5" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="55" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid56" GridPane.columnIndex="4" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="56" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid57" GridPane.columnIndex="3" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="57" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid58" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="58" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid59" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="59" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid60" GridPane.columnIndex="0" GridPane.rowIndex="4">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid61" GridPane.columnIndex="0" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="61" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid62" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="62" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid63" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="63" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid64" GridPane.columnIndex="3" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="64" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid65" GridPane.columnIndex="4" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="65" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid66" GridPane.columnIndex="5" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="66" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid67" GridPane.columnIndex="6" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="67" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid68" GridPane.columnIndex="7" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="68" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid69" GridPane.columnIndex="8" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="69" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid70" GridPane.columnIndex="9" GridPane.rowIndex="3">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="70" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid71" GridPane.columnIndex="9" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="71" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid72" GridPane.columnIndex="8" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="72" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid73" GridPane.columnIndex="7" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="73" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid74" GridPane.columnIndex="6" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="74" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid75" GridPane.columnIndex="5" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="75" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid76" GridPane.columnIndex="4" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="76" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid77" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="77" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid78" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="78" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid79" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="79" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid80" GridPane.columnIndex="0" GridPane.rowIndex="2">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="80" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid81" GridPane.columnIndex="0" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="81" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid82" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="82" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid83" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="83" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid84" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="84" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid85" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="85" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid86" GridPane.columnIndex="5" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="86" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid87" GridPane.columnIndex="6" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="87" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid88" GridPane.columnIndex="7" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="88" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid89" GridPane.columnIndex="8" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="89" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid90" GridPane.columnIndex="9" GridPane.rowIndex="1">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="90" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid91" GridPane.columnIndex="9">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="91" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid92" GridPane.columnIndex="8">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="92" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid93" GridPane.columnIndex="7">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="93" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid94" GridPane.columnIndex="6" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="94" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid95" GridPane.columnIndex="5" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="96" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid96" GridPane.columnIndex="4" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="96" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid97" GridPane.columnIndex="3" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="97" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid98" GridPane.columnIndex="2" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="98" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                  <GridPane.margin>
-                     <Insets left="-2.0" />
-                  </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid99" GridPane.columnIndex="1" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="99" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin></Text>
-               </children>
-            </GridPane>
-            <GridPane fx:id="grid100" GridPane.columnIndex="0" GridPane.rowIndex="0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="100" textAlignment="RIGHT" wrappingWidth="23.123291015624943">
-                     <font>
-                        <Font name="Impact" size="12.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="-2.0" />
-                     </GridPane.margin>
-                  </Text>
-               </children>
-            </GridPane>
-         </children>
-      </GridPane>
-      <SVGPath content="M436.58,438.35l7.37-4.26,4.08,7.08,10.46-6-3.91-6.78,6.58-3.8,47.32,82-6.58,3.8-4.33-7.51-10.46,6,4.16,7.21-7.37,4.26Zm46.62,63.72,10.45-6-3-5.25-10.45,6Zm-6.95-12,10.46-6-3.63-6.28-10.46,6ZM468.71,477l10.45-6-2.74-4.74-10.46,6Zm-6.66-11.53,10.46-6-3.16-5.46-10.46,6ZM455,453.2l10.46-6-3-5.25L452,448Z" layoutX="-114.0" layoutY="-139.0" opacity="0.23" scaleX="0.4" scaleY="0.4" stroke="BLACK" strokeWidth="0.0" />
-      <SVGPath content="M436.58,438.35l7.37-4.26,4.08,7.08,10.46-6-3.91-6.78,6.58-3.8,47.32,82-6.58,3.8-4.33-7.51-10.46,6,4.16,7.21-7.37,4.26Zm46.62,63.72,10.45-6-3-5.25-10.45,6Zm-6.95-12,10.46-6-3.63-6.28-10.46,6ZM468.71,477l10.45-6-2.74-4.74-10.46,6Zm-6.66-11.53,10.46-6-3.16-5.46-10.46,6ZM455,453.2l10.46-6-3-5.25L452,448Z" fill="#9ef8ff" layoutX="-112.0" layoutY="-140.0" scaleX="0.4" scaleY="0.4" stroke="BLACK" />
-      <SVGPath content="M436.58,438.35l7.37-4.26,4.08,7.08,10.46-6-3.91-6.78,6.58-3.8,47.32,82-6.58,3.8-4.33-7.51-10.46,6,4.16,7.21-7.37,4.26Zm46.62,63.72,10.45-6-3-5.25-10.45,6Zm-6.95-12,10.46-6-3.63-6.28-10.46,6ZM468.71,477l10.45-6-2.74-4.74-10.46,6Zm-6.66-11.53,10.46-6-3.16-5.46-10.46,6ZM455,453.2l10.46-6-3-5.25L452,448Z" layoutX="-114.0" layoutY="-219.0" opacity="0.23" scaleX="0.4" scaleY="0.4" stroke="BLACK" strokeWidth="0.0" />
-      <SVGPath content="M436.58,438.35l7.37-4.26,4.08,7.08,10.46-6-3.91-6.78,6.58-3.8,47.32,82-6.58,3.8-4.33-7.51-10.46,6,4.16,7.21-7.37,4.26Zm46.62,63.72,10.45-6-3-5.25-10.45,6Zm-6.95-12,10.46-6-3.63-6.28-10.46,6ZM468.71,477l10.45-6-2.74-4.74-10.46,6Zm-6.66-11.53,10.46-6-3.16-5.46-10.46,6ZM455,453.2l10.46-6-3-5.25L452,448Z" fill="#9ef8ff" layoutX="-112.0" layoutY="-220.0" scaleX="0.4" scaleY="0.4" stroke="BLACK" />
-      <SVGPath content="M436.58,438.35l7.37-4.26,4.08,7.08,10.46-6-3.91-6.78,6.58-3.8,47.32,82-6.58,3.8-4.33-7.51-10.46,6,4.16,7.21-7.37,4.26Zm46.62,63.72,10.45-6-3-5.25-10.45,6Zm-6.95-12,10.46-6-3.63-6.28-10.46,6ZM468.71,477l10.45-6-2.74-4.74-10.46,6Zm-6.66-11.53,10.46-6-3.16-5.46-10.46,6ZM455,453.2l10.46-6-3-5.25L452,448Z" layoutX="-234.0" layoutY="-337.0" opacity="0.23" scaleX="0.4" scaleY="0.4" stroke="BLACK" strokeWidth="0.0" />
-      <SVGPath content="M436.58,438.35l7.37-4.26,4.08,7.08,10.46-6-3.91-6.78,6.58-3.8,47.32,82-6.58,3.8-4.33-7.51-10.46,6,4.16,7.21-7.37,4.26Zm46.62,63.72,10.45-6-3-5.25-10.45,6Zm-6.95-12,10.46-6-3.63-6.28-10.46,6ZM468.71,477l10.45-6-2.74-4.74-10.46,6Zm-6.66-11.53,10.46-6-3.16-5.46-10.46,6ZM455,453.2l10.46-6-3-5.25L452,448Z" fill="#9ef8ff" layoutX="-232.0" layoutY="-338.0" scaleX="0.4" scaleY="0.4" stroke="BLACK" />
-      <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" layoutX="-306.0" layoutY="-443.0" opacity="0.32" scaleX="0.45" scaleY="0.45" />
-      <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" fill="#9ef8ff" layoutX="-308.0" layoutY="-445.0" scaleX="0.45" scaleY="0.45" stroke="BLACK" />
-      <SVGPath content="M686,426h6.52v-7H706.6v7h5.6V180h-5.6v7.83H692.53v-8.17H686v70h0v85h0v84h0Zm6.52-83.16V334H706.6v8.84Zm14.07,5.83v8.06H692.53v-8.06Zm-14.07-90.83v-7.73H706.6v7.73ZM706.6,264v7.73H692.53V264Zm-14.07-70.33H706.6v8.06H692.53Zm0,13.89H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,235v9.26H692.53V235Zm-14.07,42.54H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,305v9.26H692.53V305Zm-14.07,15.09H706.6v8.06H692.53Zm0,42.45H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,390v9.26H692.53V390Zm-14.07,15.09H706.6v8.06H692.53Z" layoutX="-521.0" layoutY="34.0" opacity="0.22" scaleX="0.45" scaleY="0.45" />
-      <SVGPath content="M686,426h6.52v-7H706.6v7h5.6V180h-5.6v7.83H692.53v-8.17H686v70h0v85h0v84h0Zm6.52-83.16V334H706.6v8.84Zm14.07,5.83v8.06H692.53v-8.06Zm-14.07-90.83v-7.73H706.6v7.73ZM706.6,264v7.73H692.53V264Zm-14.07-70.33H706.6v8.06H692.53Zm0,13.89H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,235v9.26H692.53V235Zm-14.07,42.54H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,305v9.26H692.53V305Zm-14.07,15.09H706.6v8.06H692.53Zm0,42.45H706.6v8.31H692.53Zm0,14.14H706.6v7.49H692.53ZM706.6,390v9.26H692.53V390Zm-14.07,15.09H706.6v8.06H692.53Z" fill="#9ef8ff" layoutX="-519.0" layoutY="33.0" scaleX="0.45" scaleY="0.45" stroke="BLACK" />
-      <SVGPath content="M825.2,376.27l4.93-1.38-1.6-5.75,10.66-3,0,.13,1.57,5.63,4.24-1.19L788.58,168.41l-4.24,1.18,1.8,6.44-10.66,3-1.88-6.71-4.93,1.37,16.07,57.58h0l19.5,69.91h0l19.28,69.1h0ZM811.05,306.5l-2-7.28,10.66-3,.23.83,1.8,6.44Zm12,1.82L824.9,315l-10.66,3-1.85-6.63Zm-31.51-71.74-1.77-6.36,10.66-3,1.77,6.37Zm12.08,2.09,1.77,6.36-10.66,3L793,241.65Zm-26.8-54.87,10.66-3,1.85,6.63-10.66,3ZM780,195.23l10.66-3,1.91,6.84-10.66,3Zm3.25,11.63,10.66-3,1.72,6.16L785,213Zm13.71,8,2.13,7.62-10.66,3-2.13-7.61Zm-.89,38,10.66-3,1.91,6.83-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.62-10.66,3-2.12-7.62Zm-7.2,15.39,10.66-3,1.85,6.63-10.66,3Zm9.75,34.92,10.66-3,1.9,6.84-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.61-10.66,3-2.12-7.61Zm-7.2,15.38,10.66-3,1.85,6.63-10.66,3Z" layoutX="-450.0" layoutY="-91.0" opacity="0.27" scaleX="0.55" scaleY="0.55" />
-      <SVGPath content="M825.2,376.27l4.93-1.38-1.6-5.75,10.66-3,0,.13,1.57,5.63,4.24-1.19L788.58,168.41l-4.24,1.18,1.8,6.44-10.66,3-1.88-6.71-4.93,1.37,16.07,57.58h0l19.5,69.91h0l19.28,69.1h0ZM811.05,306.5l-2-7.28,10.66-3,.23.83,1.8,6.44Zm12,1.82L824.9,315l-10.66,3-1.85-6.63Zm-31.51-71.74-1.77-6.36,10.66-3,1.77,6.37Zm12.08,2.09,1.77,6.36-10.66,3L793,241.65Zm-26.8-54.87,10.66-3,1.85,6.63-10.66,3ZM780,195.23l10.66-3,1.91,6.84-10.66,3Zm3.25,11.63,10.66-3,1.72,6.16L785,213Zm13.71,8,2.13,7.62-10.66,3-2.13-7.61Zm-.89,38,10.66-3,1.91,6.83-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.62-10.66,3-2.12-7.62Zm-7.2,15.39,10.66-3,1.85,6.63-10.66,3Zm9.75,34.92,10.66-3,1.9,6.84-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.61-10.66,3-2.12-7.61Zm-7.2,15.38,10.66-3,1.85,6.63-10.66,3Z" fill="#9ef8ff" layoutX="-448.0" layoutY="-93.0" scaleX="0.55" scaleY="0.55" stroke="BLACK" />
-      <SVGPath content="M825.2,376.27l4.93-1.38-1.6-5.75,10.66-3,0,.13,1.57,5.63,4.24-1.19L788.58,168.41l-4.24,1.18,1.8,6.44-10.66,3-1.88-6.71-4.93,1.37,16.07,57.58h0l19.5,69.91h0l19.28,69.1h0ZM811.05,306.5l-2-7.28,10.66-3,.23.83,1.8,6.44Zm12,1.82L824.9,315l-10.66,3-1.85-6.63Zm-31.51-71.74-1.77-6.36,10.66-3,1.77,6.37Zm12.08,2.09,1.77,6.36-10.66,3L793,241.65Zm-26.8-54.87,10.66-3,1.85,6.63-10.66,3ZM780,195.23l10.66-3,1.91,6.84-10.66,3Zm3.25,11.63,10.66-3,1.72,6.16L785,213Zm13.71,8,2.13,7.62-10.66,3-2.13-7.61Zm-.89,38,10.66-3,1.91,6.83-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.62-10.66,3-2.12-7.62Zm-7.2,15.39,10.66-3,1.85,6.63-10.66,3Zm9.75,34.92,10.66-3,1.9,6.84-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.61-10.66,3-2.12-7.61Zm-7.2,15.38,10.66-3,1.85,6.63-10.66,3Z" layoutX="-620.0" layoutY="-11.0" opacity="0.28" scaleX="0.52" scaleY="0.52" />
-      <SVGPath content="M825.2,376.27l4.93-1.38-1.6-5.75,10.66-3,0,.13,1.57,5.63,4.24-1.19L788.58,168.41l-4.24,1.18,1.8,6.44-10.66,3-1.88-6.71-4.93,1.37,16.07,57.58h0l19.5,69.91h0l19.28,69.1h0ZM811.05,306.5l-2-7.28,10.66-3,.23.83,1.8,6.44Zm12,1.82L824.9,315l-10.66,3-1.85-6.63Zm-31.51-71.74-1.77-6.36,10.66-3,1.77,6.37Zm12.08,2.09,1.77,6.36-10.66,3L793,241.65Zm-26.8-54.87,10.66-3,1.85,6.63-10.66,3ZM780,195.23l10.66-3,1.91,6.84-10.66,3Zm3.25,11.63,10.66-3,1.72,6.16L785,213Zm13.71,8,2.13,7.62-10.66,3-2.13-7.61Zm-.89,38,10.66-3,1.91,6.83-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.62-10.66,3-2.12-7.62Zm-7.2,15.39,10.66-3,1.85,6.63-10.66,3Zm9.75,34.92,10.66-3,1.9,6.84-10.66,3Zm3.24,11.63,10.66-3,1.72,6.16-10.66,3Zm13.72,8,2.12,7.61-10.66,3-2.12-7.61Zm-7.2,15.38,10.66-3,1.85,6.63-10.66,3Z" fill="#9ef8ff" layoutX="-617.0" layoutY="-13.0" scaleX="0.52" scaleY="0.52" stroke="BLACK" />
-      <SVGPath content="M1061.31,478l-2.51-3.56,6-4.24,2.51,3.55,0,0v0l2.89-2-62.24-88L996,392.23l62.24,88,3.11-2.2,0,0Zm-61.84-88.21,6-4.24,3,4.2-6,4.24Zm5,7.65,6-4.24,1.93,2.73-6,4.24Zm4.18,5.92,6-4.24,1.93,2.72-6,4.24Zm4.23,6,6-4.24,1.93,2.73-6,4.24Zm4.19,5.93,6-4.24,1.92,2.72-6,4.24Zm4.2,5.93,6-4.24,1.93,2.72-6,4.24Zm4.16,5.88,6-4.24,1.93,2.73-6,4.24Zm4.16,5.88,6-4.24,1.93,2.73-6,4.24Zm4.22,6,6-4.24,1.93,2.73-6,4.24Zm4.24,6,6-4.24,1.93,2.72-6,4.24Zm4.12,5.82,6-4.24,1.93,2.73-6,4.24Zm4.19,5.93,6-4.24,1.93,2.73-6,4.24Zm4.17,5.88,6-4.24,1.93,2.73-6,4.24Zm6.15,8.7-1.93-2.73,6-4.24,1.93,2.73Z" layoutX="-715.0" layoutY="-79.0" opacity="0.31" scaleX="0.85" scaleY="0.85" />
-      <SVGPath content="M1061.31,478l-2.51-3.56,6-4.24,2.51,3.55,0,0v0l2.89-2-62.24-88L996,392.23l62.24,88,3.11-2.2,0,0Zm-61.84-88.21,6-4.24,3,4.2-6,4.24Zm5,7.65,6-4.24,1.93,2.73-6,4.24Zm4.18,5.92,6-4.24,1.93,2.72-6,4.24Zm4.23,6,6-4.24,1.93,2.73-6,4.24Zm4.19,5.93,6-4.24,1.92,2.72-6,4.24Zm4.2,5.93,6-4.24,1.93,2.72-6,4.24Zm4.16,5.88,6-4.24,1.93,2.73-6,4.24Zm4.16,5.88,6-4.24,1.93,2.73-6,4.24Zm4.22,6,6-4.24,1.93,2.73-6,4.24Zm4.24,6,6-4.24,1.93,2.72-6,4.24Zm4.12,5.82,6-4.24,1.93,2.73-6,4.24Zm4.19,5.93,6-4.24,1.93,2.73-6,4.24Zm4.17,5.88,6-4.24,1.93,2.73-6,4.24Zm6.15,8.7-1.93-2.73,6-4.24,1.93,2.73Z" fill="#9ef8ff" layoutX="-713.0" layoutY="-81.0" scaleX="0.85" scaleY="0.85" stroke="BLACK" strokeWidth="0.5" />
-      <SVGPath content="M1100.69,642.48l2.67-6-10.25-4.56-2.68,6-6.08-2.7L1178.86,423l6.08,2.71-3.12,7,10.25,4.57,3-6.72,5.35,2.39-94.37,212Zm5.3-11.92,2.68-6L1098.41,620l-2.67,6Zm5.31-11.92,3.13-7L1104.18,607l-3.13,7Zm5.76-12.95,2.46-5.51-10.26-4.56-2.45,5.51Zm5.09-11.42,2.77-6.22-10.25-4.56-2.77,6.22Zm5.4-12.13,2.67-6L1120,571.57l-2.67,6Zm5.31-11.92,3-6.68L1125.58,559l-3,6.67Zm5.6-12.59,2.68-6-10.26-4.56-2.67,6Zm5.31-11.92,3.13-7-10.25-4.57-3.13,7Zm5.76-13,2.46-5.5-10.26-4.57-2.45,5.51Zm5.09-11.42,2.77-6.22-10.25-4.56-2.77,6.22Zm5.4-12.13,2.55-5.73-10.25-4.56-2.55,5.72Zm5.31-11.92,2.55-5.72L1157.62,487l-2.54,5.72Zm5.18-11.64,3.13-7-10.25-4.56-3.13,7Zm5.76-12.95,2.46-5.5-10.26-4.57-2.45,5.51Zm5.09-11.42,2.77-6.22-10.25-4.56-2.77,6.22Zm5.4-12.13,2.67-6-10.25-4.57-2.67,6Z" layoutX="-768.0" layoutY="-123.0" opacity="0.29" scaleX="0.5" scaleY="0.5" />
-      <SVGPath content="M1100.69,642.48l2.67-6-10.25-4.56-2.68,6-6.08-2.7L1178.86,423l6.08,2.71-3.12,7,10.25,4.57,3-6.72,5.35,2.39-94.37,212Zm5.3-11.92,2.68-6L1098.41,620l-2.67,6Zm5.31-11.92,3.13-7L1104.18,607l-3.13,7Zm5.76-12.95,2.46-5.51-10.26-4.56-2.45,5.51Zm5.09-11.42,2.77-6.22-10.25-4.56-2.77,6.22Zm5.4-12.13,2.67-6L1120,571.57l-2.67,6Zm5.31-11.92,3-6.68L1125.58,559l-3,6.67Zm5.6-12.59,2.68-6-10.26-4.56-2.67,6Zm5.31-11.92,3.13-7-10.25-4.57-3.13,7Zm5.76-13,2.46-5.5-10.26-4.57-2.45,5.51Zm5.09-11.42,2.77-6.22-10.25-4.56-2.77,6.22Zm5.4-12.13,2.55-5.73-10.25-4.56-2.55,5.72Zm5.31-11.92,2.55-5.72L1157.62,487l-2.54,5.72Zm5.18-11.64,3.13-7-10.25-4.56-3.13,7Zm5.76-12.95,2.46-5.5-10.26-4.57-2.45,5.51Zm5.09-11.42,2.77-6.22-10.25-4.56-2.77,6.22Zm5.4-12.13,2.67-6-10.25-4.57-2.67,6Z" fill="#9ef8ff" layoutX="-771.0" layoutY="-126.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" />
-      <ImageView fitHeight="56.0" fitWidth="29.0" layoutX="369.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../snake1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="122.0" fitWidth="18.0" layoutX="267.0" layoutY="118.0" pickOnBounds="true">
-         <image>
-            <Image url="@../snake3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="93.0" fitWidth="29.0" layoutX="299.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../snake2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="93.0" fitWidth="29.0" layoutX="204.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../snake2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="82.0" fitWidth="43.0" layoutX="197.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../snake2-flipped.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="76.0" fitWidth="52.0" layoutX="275.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../SNAKESAsset 17.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="76.0" fitWidth="57.0" layoutX="172.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../SNAKESAsset 17.png" />
-         </image>
-      </ImageView>
-      <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76ZM528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" layoutX="-281.0" layoutY="-254.0" opacity="0.32" scaleX="0.45" scaleY="0.45" />
-      <SVGPath content="M528.54,767.67l2.71-8.23-11.47-3.78-2.6,7.91-8.09-2.67L560.6,604.52l8.09,2.66-2.56,7.76,11.47,3.78,2.45-7.43,7.22,2.37L535.76,770ZM533.7,752l1.9-5.76-11.47-3.77-1.9,5.75Zm4.35-13.19,2.27-6.9-11.47-3.78-2.27,6.9Zm4.72-14.33,1.71-5.21L533,715.49l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.79-5.45-11.47-3.78-1.79,5.45Zm4.34-13.19,1.8-5.45L546,676l-1.8,5.45ZM560,672.32l2.27-6.89-11.47-3.78-2.27,6.89ZM564.67,658l1.71-5.21L554.91,649l-1.71,5.21Zm4.16-12.65,2-6-11.47-3.78-2,6Zm4.43-13.43,1.89-5.75-11.46-3.78-1.9,5.76Z" fill="#9ef8ff" layoutX="-283.0" layoutY="-256.0" scaleX="0.45" scaleY="0.45" stroke="BLACK" />
-      <ImageView fitHeight="158.0" fitWidth="30.0" layoutX="325.0" layoutY="116.0" pickOnBounds="true">
-         <image>
-            <Image url="@../SNAKESAsset 16.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="389.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../SNAKESAsset 15.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="158.0" fitWidth="52.0" layoutX="220.0" layoutY="272.0" pickOnBounds="true">
-         <image>
-            <Image url="@../SNAKESAsset 18.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="but1" layoutX="159.0" layoutY="495.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="31.0" style="-fx-background-color: transparent;" textFill="#4faae7">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../blue.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="but2" layoutX="186.0" layoutY="495.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="#4de47a">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../GREEN.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <TextField alignment="TOP_CENTER" layoutX="210.0" layoutY="46.0" prefHeight="39.0" prefWidth="24.0" text="100">
-         <font>
-            <Font name="Arial Bold" size="8.0" />
-         </font>
-      </TextField>
-      <Button fx:id="rbut" layoutX="363.0" layoutY="545.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: #4de47a;" textFill="#4de47a">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../GREEN.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="lbut" layoutX="199.0" layoutY="545.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: #4faae7;" textFill="#4faae7">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../blue.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <TextField fx:id="Textf" layoutX="248.0" layoutY="34.0" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="334.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="74.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="84.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-      <Text layoutX="357.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 " textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
-   </children>
-</Pane>
+public class Controller {
+
+    Random random = new Random();
+
+    token t1;
+    token t2;
+    Player p1;
+    Player p2;
+
+    @FXML
+    private GridPane grid1;
+
+    @FXML
+    private GridPane grid10;
+
+    @FXML
+    private GridPane grid100;
+
+    @FXML
+    private GridPane grid11;
+
+    @FXML
+    private GridPane grid12;
+
+    @FXML
+    private GridPane grid13;
+
+    @FXML
+    private GridPane grid36;
+
+    @FXML
+    private GridPane grid14;
+
+    @FXML
+    private GridPane grid15;
+
+    @FXML
+    private GridPane grid16;
+
+    @FXML
+    private GridPane grid17;
+
+    @FXML
+    private GridPane grid18;
+
+    @FXML
+    private GridPane grid19;
+
+    @FXML
+    private GridPane grid2;
+
+    @FXML
+    private GridPane grid20;
+
+    @FXML
+    private GridPane grid21;
+
+    @FXML
+    private GridPane grid22;
+
+    @FXML
+    private GridPane grid23;
+
+    @FXML
+    private GridPane grid24;
+
+    @FXML
+    private GridPane grid25;
+
+    @FXML
+    private GridPane grid26;
+
+    @FXML
+    private GridPane grid27;
+
+    @FXML
+    private GridPane grid28;
+
+    @FXML
+    private GridPane grid29;
+
+    @FXML
+    private GridPane grid3;
+
+    @FXML
+    private GridPane grid30;
+
+    @FXML
+    private GridPane grid31;
+
+    @FXML
+    private GridPane grid32;
+
+    @FXML
+    private GridPane grid33;
+
+    @FXML
+    private GridPane grid34;
+
+    @FXML
+    private GridPane grid35;
+
+    @FXML
+    private GridPane grid37;
+
+    @FXML
+    private GridPane grid38;
+
+    @FXML
+    private GridPane grid39;
+
+    @FXML
+    private GridPane grid4;
+
+    @FXML
+    private GridPane grid40;
+
+    @FXML
+    private GridPane grid41;
+
+    @FXML
+    private GridPane grid42;
+
+    @FXML
+    private GridPane grid43;
+
+    @FXML
+    private GridPane grid44;
+
+    @FXML
+    private GridPane grid45;
+
+    @FXML
+    private GridPane grid46;
+
+    @FXML
+    private GridPane grid47;
+
+    @FXML
+    private GridPane grid48;
+
+    @FXML
+    private GridPane grid49;
+
+    @FXML
+    private GridPane grid5;
+
+    @FXML
+    private GridPane grid50;
+
+    @FXML
+    private GridPane grid51;
+
+    @FXML
+    private GridPane grid52;
+
+    @FXML
+    private GridPane grid53;
+
+    @FXML
+    private GridPane grid54;
+
+    @FXML
+    private GridPane grid55;
+
+    @FXML
+    private GridPane grid56;
+
+    @FXML
+    private GridPane grid57;
+
+    @FXML
+    private GridPane grid58;
+
+    @FXML
+    private GridPane grid59;
+
+    @FXML
+    private GridPane grid6;
+
+    @FXML
+    private GridPane grid60;
+
+    @FXML
+    private GridPane grid61;
+
+    @FXML
+    private GridPane grid62;
+
+    @FXML
+    private GridPane grid63;
+
+    @FXML
+    private GridPane grid64;
+
+    @FXML
+    private GridPane grid65;
+
+    @FXML
+    private GridPane grid66;
+
+    @FXML
+    private GridPane grid67;
+
+    @FXML
+    private GridPane grid68;
+
+    @FXML
+    private GridPane grid69;
+
+    @FXML
+    private GridPane grid7;
+
+    @FXML
+    private GridPane grid70;
+
+    @FXML
+    private GridPane grid71;
+
+    @FXML
+    private GridPane grid72;
+
+    @FXML
+    private GridPane grid73;
+
+    @FXML
+    private GridPane grid74;
+
+    @FXML
+    private GridPane grid75;
+
+    @FXML
+    private GridPane grid76;
+
+    @FXML
+    private GridPane grid77;
+
+    @FXML
+    private GridPane grid78;
+
+    @FXML
+    private GridPane grid79;
+
+    @FXML
+    private GridPane grid8;
+
+    @FXML
+    private GridPane grid80;
+
+    @FXML
+    private GridPane grid81;
+
+    @FXML
+    private GridPane grid82;
+
+    @FXML
+    private GridPane grid83;
+
+    @FXML
+    private GridPane grid84;
+
+    @FXML
+    private GridPane grid85;
+
+    @FXML
+    private GridPane grid86;
+
+    @FXML
+    private GridPane grid87;
+
+    @FXML
+    private GridPane grid88;
+
+    @FXML
+    private GridPane grid89;
+
+    @FXML
+    private GridPane grid9;
+
+    @FXML
+    private GridPane grid90;
+
+    @FXML
+    private GridPane grid91;
+
+    @FXML
+    private GridPane grid92;
+
+    @FXML
+    private GridPane grid93;
+
+    @FXML
+    private GridPane grid94;
+
+    @FXML
+    private GridPane grid95;
+
+    @FXML
+    private GridPane grid96;
+
+    @FXML
+    private GridPane grid97;
+
+    @FXML
+    private GridPane grid98;
+
+    @FXML
+    private GridPane grid99;
+    @FXML
+    private TextField Textf;
+
+    @FXML
+    private GridPane grid;
+    @FXML
+    private Button but1;
+
+    @FXML
+    private Button but2;
+
+    @FXML
+    private Button dice;
+
+    @FXML
+    private Button lbut;
+
+    @FXML
+    private Button rbut;
+
+    @FXML
+    private ImageView diceimage;
+
+    public void initialize(){
+        t1 = new token(but1);
+        t2 = new token(but2);
+        int[][] pos_arr = {{0,9},{1,9},{2,9},{3,9},{4,9},{5,9},{6,9},{7,9},{8,9},{9,9},
+                {9,8},{8,8},{7,8},{6,8},{5,8},{4,8},{3,8},{2,8},{1,8},{0,8},
+                {0,7},{1,7},{2,7},{3,7},{4,7},{5,7},{6,7},{7,7},{8,7},{9,7},
+                {9,6},{8,6},{7,6},{6,6},{5,6},{4,6},{3,6},{2,6},{1,6},{0,6},
+                {0,5},{1,5},{2,5},{3,5},{4,5},{5,5},{6,5},{7,5},{8,5},{9,5},
+                {9,4},{8,4},{7,4},{6,4},{5,4},{4,4},{3,4},{2,4},{1,4},{0,4},
+                {0,3},{1,3},{2,3},{3,3},{4,3},{5,3},{6,3},{7,3},{8,3},{9,3},
+                {9,2},{8,2},{7,2},{6,2},{5,2},{4,2},{3,2},{2,2},{1,2},{0,2},
+                {0,1},{1,1},{2,1},{3,1},{4,1},{5,1},{6,1},{7,1},{8,1},{9,1},
+                {9,0},{8,0},{7,0},{6,0},{5,0},{4,0},{3,0},{2,0},{1,0},{0,0},
+        };
+        GridPane[] g = {grid1,grid2,grid3,grid4,grid5,grid6,grid7,grid8,grid9,grid10,
+                grid11,grid12,grid13,grid14,grid15,grid16,grid17, grid18,grid19,grid20,
+                grid21,grid22,grid23,grid24,grid25,grid26,grid27, grid28,grid29,grid30,
+                grid31,grid32,grid33,grid34,grid35,grid36,grid37, grid38,grid39,grid40,
+                grid41,grid42,grid43,grid44,grid45,grid46,grid47, grid48,grid49,grid50,
+                grid51,grid52,grid53,grid54,grid55,grid56,grid57, grid58,grid59,grid60,
+                grid61,grid62,grid63,grid64,grid65,grid66,grid67, grid68,grid69,grid70,
+                grid71,grid72,grid73,grid74,grid75,grid76,grid77, grid78,grid79,grid80,
+                grid81,grid82,grid83,grid84,grid85,grid86,grid87, grid88,grid89,grid90,
+                grid91,grid92,grid93,grid94,grid95,grid96,grid97, grid98,grid99,grid90,};
+
+        int[][] upgrade = {{3,9}, {7,9},{0,7},{7,7},{8,6},{1,5},{2,4},{8,4},{8,3},{3,1}};
+        int[][] reach = {{4,7},{9,6},{0,4},{5,5},{7,5},{0,2},{3,2},{7,3},{7,0},{2,0}};
+        int[][] demot = {{9,8},{4,6},{4,4},{2,5},{9,1},{6,0},{5,2},{0,1},{4,0},{1,0}};
+        int[][] fall = {{8,9},{6,8},{2,8},{1,7},{9,5},{7,4},{6,4},{2,3},{4,3},{2,2}};
+
+        int[] present = {0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0};
+        p1 = new Player(t1,pos_arr, grid,upgrade,reach,demot,fall, present,g);
+        p2 = new Player(t2, pos_arr, grid,upgrade,reach,demot,fall,present,g);
+
+    }
+    @FXML
+    private Button radbut;
+
+    @FXML
+    void clio(ActionEvent event) {
+        grid.add(but2,0,9);
+    }
+
+
+    @FXML
+    void roll(ActionEvent event) {
+        Thread thread = new Thread(){
+            public void run(){
+                File file_2 = null;
+                File file6 = new File("src/dice6.jpg");
+                File file1 = new File("src/dice1.jpg");
+                File file2 = new File("src/dice2.jpg");
+                File file3 = new File("src/dice3.jpg");
+                File file4 = new File("src/dice4.jpg");
+                File file5 = new File("src/dice5.jpg");
+
+                try {
+                    if(p1.turn == 1){
+                        rbut.setDisable(true);
+                        lbut.setDisable(false);
+                    }
+                    else{
+                        lbut.setDisable(true);
+                        rbut.setDisable(false);
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        file_2 = new File("src/dice" + (random.nextInt(6)+1)+".jpg");
+                        diceimage.setImage(new Image(file_2.toURI().toString()));
+                        Thread.sleep(50);
+                    }
+
+
+                    if(p1.turn == 1){
+                        if(file_2.equals(file1)){
+                            p1.mov = 1;
+
+                            if(p1.t.inside_complete){
+                                p2.turn = 2;
+                                p1.turn = 2;
+                            }
+                            p1.play(p1.t,p1,p2);
+
+                        }
+                        else {
+                            if (file_2.equals(file2)) {
+                                p1.mov = 2;
+                            } else if (file_2.equals(file3)) {
+                                p1.mov = 3;
+                            } else if (file_2.equals(file4)) {
+                                p1.mov = 4;
+                            } else if (file_2.equals(file5)) {
+                                p1.mov = 5;
+                            } else if (file_2.equals(file6)) {
+                                p1.mov = 6;
+                            }
+                            p1.play(p1.t,p1,p2);
+                            p1.turn =2;
+                            p2.turn = 2;
+                        }
+                        if(p1.win){
+                            Textf.setText("Player 1 won");
+                        }
+                    }
+                    else if(p1.turn == 2){
+                        if(file_2.equals(file1)){
+                            p2.mov = 1;
+
+                            if(p2.t.inside_complete){
+                                p2.turn = 1;
+                                p1.turn = 1;
+                            }
+                            p2.play(p2.t,p1,p2);
+
+                        }
+                        else {
+                            if (file_2.equals(file2)) {
+                                p2.mov = 2;
+                            } else if (file_2.equals(file3)) {
+                                p2.mov = 3;
+                            } else if (file_2.equals(file4)) {
+                                p2.mov = 4;
+                            } else if (file_2.equals(file5)) {
+                                p2.mov = 5;
+                            } else if (file_2.equals(file6)) {
+                                p2.mov = 6;
+                            }
+                            p2.play(p2.t,p1,p2);
+                            p1.turn =1;
+                            p2.turn = 1;
+                        }
+                        if(p2.win){
+                            Textf.setText("player2 won");
+                        }
+                    }
+
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        thread.start();
+    }
+
+
+
+}
+class token{
+    public Button bt;
+    public int posx;
+    public int posy;
+    public boolean inside = true;
+    public boolean inside_complete = false;
+    token(Button b){
+        bt = b;
+
+    }
+
+}
+
+class Player extends Thread{
+    token t;
+    public int mov;
+    public int turn =1;
+    public int[][] pos_arr;
+    public GridPane grid;
+    public int[][] upgrade;
+    public int[][] reach1;
+    public int[][] fall;
+    public int[][] reach2;
+    public boolean win = false;
+    public int[] present;
+    public GridPane[] smallgrid;
+    Player(token t, int[][] pr, GridPane grid, int[][] a, int[][] b, int[][] c, int[][] d, int[] present, GridPane[] sgrid){
+        this.t = t;
+        pos_arr = pr;
+        this.grid = grid;
+        upgrade = a;
+        reach1 = b;
+        fall = c;
+        reach2 = d;
+        this.present = present;
+        smallgrid = sgrid;
+    }
+    int linearCheck(int ar[][], int arr[])
+    {
+        for (int i = 0; i < ar.length; i++)
+        {
+
+            boolean matched = true;
+
+            for (int j = 0; j < arr.length; j++)
+            {
+                if (ar[i][j] != arr[j])
+                {
+                    matched = false;
+                    break;
+                }
+            }
+            if (matched)
+                return i + 1;
+        }
+        return -1;
+    }
+    public void play(token t, Player p1, Player p2) throws InterruptedException {
+        if(t.inside){
+            if(mov == 1){
+                Platform.runLater(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        grid.add(t.bt, pos_arr[0][0], pos_arr[0][1]);
+                    }
+                });
+                present[0] += 1;
+                t.inside= false;
+                t.posx = pos_arr[0][0];
+                t.posy = pos_arr[0][1];
+            }
+
+        }
+        else{
+            t.inside_complete = true;
+            int[] temp = new int[]{t.posx, t.posy};
+            int ind = linearCheck(pos_arr, temp) -1;
+
+            if(present[ind] == 2){
+                int[] temp_2 =pos_arr[ind+1];
+                Platform.runLater(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        grid.add(t.bt,temp_2[0], temp_2[1]);
+                        if(p1.turn == 1){
+                            Platform.runLater(new Runnable(){
+
+                                @Override
+                                public void run() {
+                                    grid.add(p2.t.bt,pos_arr[ind][0],pos_arr[ind][1]);
+                                }
+                            });
+
+                        }
+                        else{
+                            Platform.runLater(new Runnable(){
+
+                                @Override
+                                public void run() {
+                                    grid.add(p1.t.bt,pos_arr[ind][0],pos_arr[ind][1]);
+                                }
+                            });
+
+                        }
+
+                    }
+                });
+
+
+            }
+            present[ind]  -= 1;
+            if(ind+mov+1 <= 100){
+
+                for (int i = ind+1; i <ind+mov+1 ; i++) {
+                    GridPane.setConstraints(t.bt, pos_arr[i][0], pos_arr[i][1]);
+                    Thread.sleep(400);
+                    t.posx = pos_arr[i][0];
+                    t.posy = pos_arr[i][1];
+                }
+                int[] temp1 = pos_arr[ind+mov];
+                int ind1 = linearCheck(upgrade, temp1)-1;
+                if(ind1 != -2){
+                    GridPane.setConstraints(t.bt, reach1[ind1][0], reach1[ind1][1]);
+                    t.posx= reach1[ind1][0];
+                    t.posy = reach1[ind1][1];
+                }
+                int ind2 = linearCheck(fall, temp1)-1;
+                if(ind2 != -2){
+                    GridPane.setConstraints(t.bt, reach2[ind2][0], reach2[ind2][1]);
+                    t.posx= reach2[ind2][0];
+                    t.posy = reach2[ind2][1];
+                }
+                int[] temp2 = new int[]{t.posx, t.posy};
+                int ind_tem = linearCheck(pos_arr, temp2)-1;
+
+                present[ind_tem] += 1;
+                if(present[ind_tem] == 2){
+                    Platform.runLater(new Runnable(){
+
+                        @Override
+                        public void run() {
+                            smallgrid[ind_tem].add(p1.t.bt,0, 0);
+                            smallgrid[ind_tem].add(p2.t.bt, 0, 1);
+                        }
+                    });
+
+                }
+                if(ind+mov == 99){
+                    win = true;
+                }
+            }
+
+        }
+    }
+}

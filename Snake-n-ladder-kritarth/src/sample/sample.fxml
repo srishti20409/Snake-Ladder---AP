@@ -9,6 +9,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
@@ -1956,9 +1959,9 @@
                      <font>
                         <Font name="Impact" size="12.0" />
                      </font>
-                  <GridPane.margin>
-                     <Insets left="-2.0" />
-                  </GridPane.margin></Text>
+                     <GridPane.margin>
+                        <Insets left="-2.0" />
+                     </GridPane.margin></Text>
                </children>
             </GridPane>
             <GridPane fx:id="grid99" GridPane.columnIndex="1" GridPane.rowIndex="0">
@@ -2070,6 +2073,7 @@
             <Image url="@../SNAKESAsset 18.png" />
          </image>
       </ImageView>
+      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-750.0" layoutY="-462.0" scaleX="0.3" scaleY="0.3" />
       <Button fx:id="but1" layoutX="158.0" layoutY="475.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="31.0" style="-fx-background-color: transparent;" textFill="#4faae7">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
@@ -2115,5 +2119,25 @@
             <Font size="9.0" />
          </font>
       </Text>
+      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-586.0" layoutY="-461.0" scaleX="0.3" scaleY="0.3" />
+      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-670.0" layoutY="-461.0" scaleX="0.35" scaleY="0.35" />
+      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-660.0" layoutY="-451.0" scaleX="0.4" scaleY="0.4">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18369071185588837" green="0.05360623821616173" blue="0.19298245012760162" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5897634029388428" green="0.015432098880410194" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </SVGPath>
    </children>
 </Pane>
