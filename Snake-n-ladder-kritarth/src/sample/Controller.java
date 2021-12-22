@@ -402,12 +402,12 @@ public class Controller {
         Thread thread = new Thread(){
             public void run(){
                 File file_2 = null;
-                File file6 = new File("src/dice6.jpg");
-                File file1 = new File("src/dice1.jpg");
-                File file2 = new File("src/dice2.jpg");
-                File file3 = new File("src/dice3.jpg");
-                File file4 = new File("src/dice4.jpg");
-                File file5 = new File("src/dice5.jpg");
+                File file6 = new File("@../dice6.png");
+                File file1 = new File("@../dice1.png");
+                File file2 = new File("@../dice2.png");
+                File file3 = new File("@../dice3.png");
+                File file4 = new File("@../dice4.png");
+                File file5 = new File("@../dice5.png");
 
                 try {
                     if(p1.turn == 1){
@@ -419,7 +419,10 @@ public class Controller {
                         rbut.setDisable(false);
                     }
                     for (int i = 0; i < 5; i++) {
-                        file_2 = new File("src/dice" + (random.nextInt(6)+1)+".jpg");
+                        file_2 = new File("@../rolling-dice.gif");
+                        diceimage.setImage(new Image(file_2.toURI().toString()));
+                        Thread.sleep(1100);
+                        file_2 = new File("@../dice" + (random.nextInt(6)+1)+".png");
                         diceimage.setImage(new Image(file_2.toURI().toString()));
                         Thread.sleep(50);
                     }

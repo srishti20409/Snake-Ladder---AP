@@ -24,12 +24,6 @@
             <Image url="@../SNAKESAsset 21.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="diceimage" fitHeight="39.0" fitWidth="43.0" layoutX="440.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../dice6.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="dice" layoutX="419.0" layoutY="589.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
       <ImageView fitHeight="614.0" fitWidth="330.0" layoutX="571.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image.jpg" />
@@ -2077,23 +2071,6 @@
             <Image url="@../SNAKESAsset 18.png" />
          </image>
       </ImageView>
-      <Button fx:id="but1" layoutX="158.0" layoutY="475.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="31.0" style="-fx-background-color: transparent;" textFill="#4faae7">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../blue.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="but2" layoutX="174.0" layoutY="475.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="#4de47a">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../GREEN.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
       <TextField fx:id="Textf" layoutX="212.0" layoutY="52.0" />
       <Text layoutX="334.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
       <Button layoutX="53.0" layoutY="279.0" mnemonicParsing="false" text="Button" textFill="#5c1f91" />
@@ -2209,5 +2186,28 @@
             <Image url="@../flag.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="diceimage" fitHeight="39.0" fitWidth="43.0" layoutX="270.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" scaleX="0.6" scaleY="0.6">
+         <image>
+            <Image url="@../dice6.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="dice" layoutX="259.0" layoutY="494.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
+      <Button fx:id="but2" layoutX="174.0" layoutY="475.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="#4de47a">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../GREEN.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="but1" layoutX="158.0" layoutY="475.0" minHeight="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="31.0" style="-fx-background-color: transparent;" textFill="#4faae7">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../blue.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </Pane>

@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d052ea-544f-48dc-888e-f60d71eb0989" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake&amp;ladder/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Snake&amp;ladder/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/dice6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/dice1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/dice2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/dice3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/dice4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/dice5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/dice6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/target/classes/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +65,7 @@
       <recent name="C:\Users\hp\Documents\GitHub\AP_Final_Snake-Ladder\Snake&amp;ladder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Documents\GitHub\AP_Final_Snake-Ladder\Snake-n-ladder-kritarth\src" />
       <recent name="C:\Users\hp\Documents\GitHub\AP_Final_Snake-Ladder\Snake&amp;ladder\sample" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

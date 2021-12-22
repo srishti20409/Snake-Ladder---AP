@@ -419,6 +419,10 @@ public class Controller {
                         rbut.setDisable(false);
                     }
                     for (int i = 0; i < 5; i++) {
+
+                        file_2 = new File("src/dice" + (random.nextInt(6)+1)+".jpg");
+
+
                         file_2 = new File("src/dice" + (random.nextInt(6)+1)+".jpg");
                         diceimage.setImage(new Image(file_2.toURI().toString()));
                         Thread.sleep(50);
