@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d052ea-544f-48dc-888e-f60d71eb0989" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/SNAKESAsset 19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/SNAKESAsset 21.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake-n-ladder-kritarth/src/sample/sample.fxml" afterDir="false" />
     </list>
@@ -31,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Snake&amp;ladder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Snake-n-ladder-kritarth/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.6233766" />
@@ -39,6 +41,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Documents\GitHub\AP_Final_Snake-Ladder\Snake-n-ladder-kritarth\src" />
       <recent name="C:\Users\hp\Documents\GitHub\AP_Final_Snake-Ladder\Snake&amp;ladder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

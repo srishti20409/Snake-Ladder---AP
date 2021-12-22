@@ -19,12 +19,17 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <ImageView fx:id="diceimage" fitHeight="39.0" fitWidth="43.0" layoutX="461.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="654.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SNAKESAsset%2021.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="diceimage" fitHeight="39.0" fitWidth="43.0" layoutX="440.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../dice6.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="dice" layoutX="440.0" layoutY="517.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
+      <Button fx:id="dice" layoutX="419.0" layoutY="589.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
       <ImageView fitHeight="614.0" fitWidth="330.0" layoutX="571.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image.jpg" />
@@ -2092,6 +2097,42 @@
       <TextField fx:id="Textf" layoutX="212.0" layoutY="52.0" />
       <Text layoutX="334.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="RIGHT" wrappingWidth="23.123291015624943" />
       <Button layoutX="53.0" layoutY="279.0" mnemonicParsing="false" text="Button" textFill="#5c1f91" />
+      <SVGPath content="M1181.12,1031.19H737a15.56,15.56,0,0,1-15.55-15.56V961.32A15.56,15.56,0,0,1,737,945.76h444.08a15.56,15.56,0,0,1,15.56,15.56v54.31A15.56,15.56,0,0,1,1181.12,1031.19Z" layoutX="-613.0" layoutY="-460.0" scaleX="0.2" scaleY="0.45">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.17350160135455683">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.21176470816135406" green="0.529411792755127" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4431372582912445" green="0.03529411926865578" blue="0.7372549176216125" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </SVGPath>
+      <SVGPath content="M1181.12,1031.19H737a15.56,15.56,0,0,1-15.55-15.56V961.32A15.56,15.56,0,0,1,737,945.76h444.08a15.56,15.56,0,0,1,15.56,15.56v54.31A15.56,15.56,0,0,1,1181.12,1031.19Z" layoutX="-723.0" layoutY="-460.0" scaleX="0.2" scaleY="0.45">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.21176470816135406" green="0.529411792755127" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4431372582912445" green="0.03529411926865578" blue="0.7372549176216125" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </SVGPath>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#320b69" height="25.0" layoutX="214.0" layoutY="517.0" stroke="BLACK" strokeType="INSIDE" width="79.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#310d66" height="25.0" layoutX="288.0" layoutY="517.0" stroke="BLACK" strokeType="INSIDE" width="79.0" />
       <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-670.0" layoutY="-462.0" scaleX="0.4" scaleY="0.4" stroke="WHITE" strokeWidth="1.5">
@@ -2100,37 +2141,73 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.21296297013759613" green="0.5277777910232544" blue="1.0" />
+                        <Color red="0.21176470816135406" green="0.529411792755127" blue="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.4440383315086365" green="0.03411306068301201" blue="0.7368420958518982" />
+                        <Color red="0.4431372582912445" green="0.03529411926865578" blue="0.7372549176216125" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </fill>
       </SVGPath>
-      <Button fx:id="rbut" layoutX="359.0" layoutY="510.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="#4de47a">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../GREEN.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <Button fx:id="lbut" layoutX="194.0" layoutY="510.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="24.0" style="-fx-background-color: transparent;" textFill="#4faae7">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../blue.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-750.0" layoutY="-462.0" scaleX="0.3" scaleY="0.3" />
       <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" fill="#c0b7b7" layoutX="-670.0" layoutY="-462.0" scaleX="0.33" scaleY="0.33" stroke="BLACK" />
-      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-586.0" layoutY="-461.0" scaleX="0.3" scaleY="0.3" />
-      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" fill="#c0b7b7" layoutX="-672.0" layoutY="-453.0" scaleX="0.3" scaleY="0.3" stroke="BLACK" />
+      <SVGPath content="M1002.2,1049.65H917.91a17.15,17.15,0,0,1-17.15-17.15V948.21a17.15,17.15,0,0,1,17.15-17.15h84.29a17.15,17.15,0,0,1,17.15,17.15v84.29A17.15,17.15,0,0,1,1002.2,1049.65Z" layoutX="-670.0" layoutY="-462.0" scaleX="0.25" scaleY="0.25" stroke="BLACK">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.04475308582186699" green="0.25438597798347473" blue="0.12860624492168427" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></SVGPath>
+      <Text fill="WHITE" layoutX="225.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player1" textAlignment="CENTER" wrappingWidth="43.20900573730478">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="315.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player2" textAlignment="CENTER" wrappingWidth="43.20900573730478">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="45.0" fitWidth="29.0" layoutX="195.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SNAKESAsset%2019.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="29.0" layoutX="359.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SNAKESAsset%2019.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="15.0" layoutX="367.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GREEN.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="15.0" layoutX="202.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../blue.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="rbut" layoutX="313.0" layoutY="509.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" style="-fx-background-color: transparent;" textFill="#4de47a" />
+      <Button fx:id="lbut" layoutX="187.0" layoutY="508.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" style="-fx-background-color: transparent;" textFill="#4faae7" />
+      <SVGPath content="M946,889.24h25.37l1.74,24.51h14.74V917l-28.09,19.08L931.67,917v-3.47l13.67.22Z" fill="#fefe14" layoutX="-670.0" layoutY="-417.0" scaleX="0.47" scaleY="0.47" stroke="BLACK" strokeWidth="1.5" />
+      <ImageView fitHeight="23.0" fitWidth="33.0" layoutX="168.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
+         <image>
+            <Image url="@../flag.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
