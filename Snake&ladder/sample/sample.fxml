@@ -16,13 +16,13 @@
    <children>
       <ImageView fx:id="diceimage" fitHeight="69.0" fitWidth="69.0" layoutX="253.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@dice6.jpg" />
+            <Image url="@../dice6.jpg" />
          </image>
       </ImageView>
       <Button fx:id="dice" layoutX="258.0" layoutY="495.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="69.0" prefWidth="63.0" text="Button" />
       <ImageView fitHeight="614.0" fitWidth="330.0" layoutX="571.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image.jpg" />
+            <Image url="@../image.jpg" />
          </image>
       </ImageView>
       <GridPane gridLinesVisible="true" layoutX="167.0" layoutY="98.0" prefHeight="387.0" prefWidth="241.0">
