@@ -426,13 +426,13 @@ public class Controller {
     private ImageView bob;
 
     @FXML
-    void clio(ActionEvent event) {
+    public void clio(ActionEvent event) {
         grid.add(but2,0,9);
     }
 
 
     @FXML
-    void roll(ActionEvent event) {
+    public void roll(ActionEvent event) {
         Thread thread = new Thread(){
             public void run(){
                 bob.setVisible(false);
@@ -625,7 +625,7 @@ class Player extends Thread{
         this.present = present;
         smallgrid = sgrid;
     }
-    int linearCheck(int ar[][], int arr[])
+    public int linearCheck(int ar[][], int arr[])
     {
         for (int i = 0; i < ar.length; i++)
         {
