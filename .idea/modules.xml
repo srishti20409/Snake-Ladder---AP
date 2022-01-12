@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AP_Final_Snake-Ladder.iml" filepath="$PROJECT_DIR$/.idea/AP_Final_Snake-Ladder.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Snake-n-ladder-kritarth/Snake-n-ladder-kritarth.iml" filepath="$PROJECT_DIR$/Snake-n-ladder-kritarth/Snake-n-ladder-kritarth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake&amp;ladder.iml" filepath="$PROJECT_DIR$/snake&amp;ladder.iml" />
     </modules>
   </component>
 </project>
